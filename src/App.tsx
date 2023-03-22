@@ -12,34 +12,31 @@ const App1 = () => { }// first type of used components (for a event handlers)
 function App2 () { }// second(main) type of used components
 
 function App() {
-  return (
-    <div className="App">
-      <Rating />
-      <Accordion />
-    </div>
-  );
+    return (
+        <div className="App">
+            <AppTitle/>
+            <Rating/>
+            <Accordion/>
+        </div>
+    ) ;
 }
 
 function Rating () {
     return (
         <div>
-            <Star></Star>
-            <Star></Star>
-            <Star></Star>
-            <Star></Star>
-            <Star></Star>
+            <Star/>
+            <Star/>
+            <Star/>
+            <Star/>
+            <Star/>
         </div>
     )
 }
 function Accordion () {
     return (
         <div>
-            <h3>Menu</h3>
-            <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-            </ul>
+            <AccordionTitle/>
+            <AccordionBody/>
         </div>
     )
 }
@@ -49,6 +46,30 @@ function Star () {
         <div>
             star
         </div>
+    )
+}
+function AccordionTitle () {
+    //console.log('AccordionTitle is rendered')//tool for debugging
+    //debugger; //tool for debugging
+    return (
+        <h3>
+            Menu
+        </h3>
+    )
+}
+function AccordionBody () {
+    return (
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+    )
+}
+
+function AppTitle () {
+    return (
+        <>This is title of the app</>
     )
 }
 export default App;
