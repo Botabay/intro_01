@@ -6,7 +6,9 @@ function App() {
     return (
         <div className="App">
             <AppTitle/>
-            <Rating/>
+            <Rating starCount={4}/>
+            <Accordion/>
+            <Rating starCount={2}/>
             <Accordion/>
         </div>
     ) ;
