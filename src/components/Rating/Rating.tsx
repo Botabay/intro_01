@@ -1,9 +1,11 @@
 import {Star} from "./Star";
-
-export function Rating({starCount=0}) {
+type propsType={
+    starCount:number
+}
+export function Rating(props:propsType) {
     let arr: boolean[]=[];
     for (let i=0; i<5; i++){
-        if (i<starCount) {
+        if (i<props.starCount) {
             arr.push(true);
             continue;
         }

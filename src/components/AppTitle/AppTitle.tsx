@@ -1,5 +1,8 @@
-export function AppTitle({text='text'}) {
+type propsType={
+    text:string
+}
+export function AppTitle(props: propsType) {
     return (
-        <>{text}</>
+        <>{props.text}</>
     )
 }

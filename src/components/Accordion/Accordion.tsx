@@ -1,11 +1,16 @@
 import {AccordionTitle} from "./AccordionTitle";
 import {AccordionBody} from "./AccordionBody";
 
-export function Accordion({title='menu', itemsCount = 1}) {
+type propsType={
+    title:string,
+    itemsCount:number,
+    collapsed: boolean
+}
+export function Accordion(props: propsType) {
     return (
         <div>
-            <AccordionTitle title={title}/>
-            <AccordionBody itemsCount={itemsCount}/>
+            <AccordionTitle title={props.title}/>
+            <AccordionBody itemsCount={props.itemsCount} collapsed={props.collapsed}/>
         </div>
     )
 }
