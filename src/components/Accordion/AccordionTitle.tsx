@@ -1,9 +1,5 @@
-export function AccordionTitle() {
-    //console.log('AccordionTitle is rendered')//tool for debugging
-    //debugger; //tool for debugging
+export function AccordionTitle({title='menu'}) {
     return (
-        <h3>
-            Menu
-        </h3>
+        <h3>{title}</h3>
     )
 }

@@ -5,11 +5,11 @@ import {AppTitle} from "./components/AppTitle/AppTitle";
 function App() {
     return (
         <div className="App">
-            <AppTitle/>
+            <AppTitle text='the text if for AppTitle'/>
             <Rating starCount={4}/>
-            <Accordion/>
+            <Accordion title='title one' itemsCount={1}/>
             <Rating starCount={2}/>
-            <Accordion/>
+            <Accordion title='title two' itemsCount={3}/>
         </div>
     ) ;
 }

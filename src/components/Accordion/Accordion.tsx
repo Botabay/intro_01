@@ -1,11 +1,11 @@
 import {AccordionTitle} from "./AccordionTitle";
 import {AccordionBody} from "./AccordionBody";
 
-export function Accordion() {
+export function Accordion({title='menu', itemsCount = 1}) {
     return (
         <div>
-            <AccordionTitle/>
-            <AccordionBody/>
+            <AccordionTitle title={title}/>
+            <AccordionBody itemsCount={itemsCount}/>
         </div>
     )
 }

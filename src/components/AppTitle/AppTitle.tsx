@@ -1,5 +1,5 @@
-export function AppTitle() {
+export function AppTitle({text='text'}) {
     return (
-        <>This is title of the app</>
+        <>{text}</>
     )
 }

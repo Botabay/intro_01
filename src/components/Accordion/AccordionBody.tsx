@@ -1,9 +1,11 @@
-export function AccordionBody() {
+export function AccordionBody({itemsCount = 1}) {
+    const arr: string[]=[];
+    for (let i=1; i<=itemsCount; i++){
+        arr.push('item'+i);
+    }
     return (
         <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
+            {arr.map((el,index)=><li key={index}>{el}</li>)}
         </ul>
     )
 }
