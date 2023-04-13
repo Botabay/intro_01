@@ -2,7 +2,7 @@ import { Rating } from "./components/Rating/Rating";
 import { Accordion } from "./components/Accordion/Accordion";
 import { AppTitle } from "./components/AppTitle/AppTitle";
 import {OnOffComponent} from './components/OnOffComponent/OnOffComponent'
-
+///the string is made for test of Git
 export const App = () => {
     return (
         <div className="App">
