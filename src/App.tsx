@@ -20,7 +20,7 @@ export const App = () => {
             <InlineCssOnOffComponent/>
 
             <UncontrolledAccordion title='title one' itemsCount={1}/> 
-            {'сделать UncontrolledRating'}
+            <UncontrolledRating />
         </div>
     );
 }
