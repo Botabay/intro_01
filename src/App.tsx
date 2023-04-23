@@ -2,7 +2,8 @@ import { Rating } from "./components/Rating/Rating";
 import { Accordion } from "./components/Accordion/Accordion";
 import { AppTitle } from "./components/AppTitle/AppTitle";
 import {OnOffComponent} from './components/OnOffComponent/OnOffComponent'
-///the string is made for test of Git
+import {InlineCssOnOffComponent} from './components/InlineCssOnOffComponent'
+
 export const App = () => {
     return (
         <div className="App">
@@ -14,6 +15,8 @@ export const App = () => {
             <div>-----------------------------------------------------</div>
             <OnOffComponent turnedOn={true}/>
             <OnOffComponent turnedOn={false}/>
+            <div>-----------------------------------------------------</div>
+            <InlineCssOnOffComponent/>
         </div>
     );
 }
