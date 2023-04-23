@@ -5,13 +5,13 @@ export const InlineCssOnOffComponent=()=>{
         display:'inline-block',
         width: '30px',
         border:'1px solid black',
-        backgroundColor:onSt?'green':'red',
+        backgroundColor:onSt?'green':'',
         marginLeft:'10px'
     }
     const offStyle={
         display:'inline-block',
         width: '30px',
-        backgroundColor:!onSt?'green':'red',
+        backgroundColor:onSt?'':'red',
         border:'1px solid black',
         marginLeft:'10px'
     }
@@ -19,16 +19,16 @@ export const InlineCssOnOffComponent=()=>{
         display:'inline-block',
         width: '10px',
         height:'10px',
-        backgroundColor:'red',
+        backgroundColor: onSt?'green':'red',
         borderRadius:'50%',
         border:'1px solid black',
         marginLeft:'10px'
     }
     return (
         <div>
-            <span style={onStyle} >on</span>
-            <span style={offStyle}>off</span>
-            <span style={switcherStyle} onClick={()=>{setOnSt(!onSt)}}></span>
+            <span style={onStyle}  onClick={()=>{setOnSt(true)}}>on</span>
+            <span style={offStyle}  onClick={()=>{setOnSt(false)}}>off</span>
+            <span style={switcherStyle}></span>
         </div>
     )
 }
