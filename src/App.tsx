@@ -3,6 +3,7 @@ import { Accordion } from "./components/Accordion/Accordion";
 import { AppTitle } from "./components/AppTitle/AppTitle";
 import {OnOffComponent} from './components/OnOffComponent/OnOffComponent'
 import {InlineCssOnOffComponent} from './components/InlineCssOnOffComponent'
+import {UncontrolledAccordion} from './components/UncontrolledAccordion/UncontrolledAccordion'
 
 export const App = () => {
     return (
@@ -17,6 +18,9 @@ export const App = () => {
             <OnOffComponent turnedOn={false}/>
             <div>-----------------------------------------------------</div>
             <InlineCssOnOffComponent/>
+
+            <UncontrolledAccordion title='title one' itemsCount={1}/> 
+            {'сделать UncontrolledRating'}
         </div>
     );
 }
