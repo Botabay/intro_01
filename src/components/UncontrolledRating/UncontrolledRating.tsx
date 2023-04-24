@@ -1,29 +1,21 @@
-import {UncontrolledStar} from "./UncontrolledStar";
+import { UncontrolledStar } from "./UncontrolledStar";
 import { useState } from "react";
-type propsType={
+type propsType = {
     // starCount:number
 }
-export function UncontrolledRating(props:propsType) {
-    const arr: boolean[]=[];
-    const [starCountSt,setStarCountSt]=useState<number>(3);
-
-    for (let i=0; i<5; i++){
-        if (i<starCountSt) {            
-            arr.push(true);
-            continue;
-        }
-        arr.push(false)
-    }
+export function UncontrolledRating(props: propsType) {
+    const [starCountSt, setStarCountSt] = useState<number>(3);
+    console.log('rendering');
+    
     return (
         <div>
-            {arr.map((el, index)=>{
-                    return (
-                        <div>
-                            <UncontrolledStar filled={el} key={index}/><button onClick={()=>setStarCountSt(index+1)}>to vote {index+1}</button>
-                        </div>
-                    )
-                }                
-            )}
+            <div>
+                <UncontrolledStar filled={starCountSt>=1}  callback={setStarCountSt} key1={1} />
+                <UncontrolledStar filled={starCountSt>=2}  callback={setStarCountSt} key1={2} />
+                <UncontrolledStar filled={starCountSt>=3}  callback={setStarCountSt} key1={3} />
+                <UncontrolledStar filled={starCountSt>=4}  callback={setStarCountSt} key1={4} />
+                <UncontrolledStar filled={starCountSt>=5}  callback={setStarCountSt} key1={5} />
+            </div>
         </div>
     )
 }

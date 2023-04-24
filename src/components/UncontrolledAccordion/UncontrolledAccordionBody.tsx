@@ -4,7 +4,7 @@ type propsType = {
 }
 
 export function UncontrolledAccordionBody(props: propsType) {
-    const arr: string[] = ['el1,el2'];
+    const arr: string[] = [];
     for (let i = 1; i <= props.itemsCount; i++) {
         arr.push('item' + i);
     }

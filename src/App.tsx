@@ -19,8 +19,8 @@ export const App = () => {
             <OnOffComponent turnedOn={false}/>
             <div>-----------------------------------------------------</div>
             <InlineCssOnOffComponent/>
-
             <UncontrolledAccordion title='title UncontrolledAccordion' itemsCount={3}/> 
+            
             <UncontrolledRating />
         </div>
     );
