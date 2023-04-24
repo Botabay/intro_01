@@ -3,6 +3,8 @@ type propsType={
 }
 export function UncontrolledAccordionTitle(props:propsType) {
     return (
-        <h3>{props.title}</h3>
+        <div>
+            <h3>{props.title}</h3>
+        </div>
     )
 }

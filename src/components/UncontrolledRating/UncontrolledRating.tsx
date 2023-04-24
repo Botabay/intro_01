@@ -5,7 +5,8 @@ type propsType={
 export function UncontrolledRating(props:propsType) {
     let arr: boolean[]=[];
     for (let i=0; i<5; i++){
-        if (i<props.starCount) {
+        //if (i<props.starCount) {
+            if (true) {
             arr.push(true);
             continue;
         }
