@@ -1,17 +1,21 @@
-import { useState } from "react"
-export const InlineCssOnOffComponent=()=>{
-    const [onSt,setOnSt]=useState<boolean>(false)
+import { useState,Dispatch,SetStateAction} from "react"
+type PropsType={
+    onClick:Dispatch<SetStateAction<boolean>>
+    value:boolean
+}
+export const InlineCssOnOffComponent=(props:PropsType)=>{
+    // const [onSt,setOnSt]=useState<boolean>(false)
     const onStyle={
         display:'inline-block',
         width: '30px',
         border:'1px solid black',
-        backgroundColor:onSt?'green':'',
+        backgroundColor:props.value?'green':'',
         marginLeft:'10px'
     }
     const offStyle={
         display:'inline-block',
         width: '30px',
-        backgroundColor:onSt?'':'red',
+        backgroundColor:props.value?'':'red',
         border:'1px solid black',
         marginLeft:'10px'
     }
@@ -19,15 +23,15 @@ export const InlineCssOnOffComponent=()=>{
         display:'inline-block',
         width: '10px',
         height:'10px',
-        backgroundColor: onSt?'green':'red',
+        backgroundColor: props.value?'green':'red',
         borderRadius:'50%',
         border:'1px solid black',
         marginLeft:'10px'
     }
     return (
         <div>
-            <span style={onStyle}  onClick={()=>{setOnSt(true)}}>on</span>
-            <span style={offStyle}  onClick={()=>{setOnSt(false)}}>off</span>
+            <span style={onStyle}  onClick={()=>props.onClick(!props.value)}>on</span>
+            <span style={offStyle}  onClick={()=>props.onClick(!props.value)}>off</span>
             <span style={switcherStyle}></span>
         </div>
     )
