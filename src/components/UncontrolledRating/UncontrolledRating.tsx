@@ -4,9 +4,7 @@ type propsType = {
     // starCount:number
 }
 export function UncontrolledRating(props: propsType) {
-    const [starCountSt, setStarCountSt] = useState<number>(3);
-    console.log('rendering');
-    
+    const [starCountSt, setStarCountSt] = useState<number>(3);    
     return (
         <div>
             <div>

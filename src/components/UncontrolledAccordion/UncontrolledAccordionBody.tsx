@@ -8,12 +8,17 @@ export function UncontrolledAccordionBody(props: propsType) {
     for (let i = 1; i <= props.itemsCount; i++) {
         arr.push('item' + i);
     }
-    if (props.collapsed) return <></>;
-    else return (
-        <div>
-            <ul>
-                {arr.map((el, index) => <li key={index}>{el}</li>)}
-            </ul>
-        </div>
-    )
+    // if (props.collapsed) return <></>;
+    // else return (
+    //     <div>
+    //         <ul>
+    //             {arr.map((el, index) => <li key={index}>{el}</li>)}
+    //         </ul>
+    //     </div>
+    // )
+    return props.collapsed ? <></> :(
+                <ul>
+                    {arr.map((el, index) => <li key={index}>{el}</li>)}
+                </ul>
+        )
 }

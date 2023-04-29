@@ -5,14 +5,18 @@ import {OnOffComponent} from './components/OnOffComponent/OnOffComponent'
 import {InlineCssOnOffComponent} from './components/InlineCssOnOffComponent'
 import {UncontrolledAccordion} from './components/UncontrolledAccordion/UncontrolledAccordion'
 import { UncontrolledRating } from './components/UncontrolledRating/UncontrolledRating'
+import { useState } from "react";
+import {ratingValueType} from './components/Rating/Rating'
 
 export const App = () => {
+    const [starCountSt,setStarCountSt]=useState<ratingValueType>(1)
     return (
         <div className="App">
             <AppTitle text='the text if for AppTitle' />
-            <Rating starCount={4} />
+
+            <Rating starCount={starCountSt} onClick={setStarCountSt}/>
             <Accordion title='title one' itemsCount={5} collapsed={false} />
-            <Rating starCount={2} />
+            {/* <Rating starCount={2} /> */}
             <Accordion title='title two' itemsCount={2} collapsed={true} />
             <div>-----------------------------------------------------</div>
             <OnOffComponent turnedOn={true}/>

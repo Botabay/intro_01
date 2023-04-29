@@ -15,7 +15,8 @@ export function UncontrolledAccordion(props: propsType) {
     }
     return (
         <div style={style}>
-            <UncontrolledAccordionTitle title={props.title}/><button onClick={()=>{setCollapsedSt(!collapsedSt)}}>toggle UncontrolledAccordion</button>
+            <UncontrolledAccordionTitle title={props.title} onClick={()=>{setCollapsedSt(!collapsedSt)}}/>
+              {/* <button onClick={()=>{setCollapsedSt(!collapsedSt)}}>toggle UncontrolledAccordion</button> */}
             <UncontrolledAccordionBody itemsCount={props.itemsCount} collapsed={collapsedSt}/>
         </div>
     )
