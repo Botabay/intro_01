@@ -16,7 +16,7 @@ export const App = () => {
 
             <Rating starCount={starCountSt} onClick={setStarCountSt}/>
             <Accordion title='title one' itemsCount={5} collapsed={false} />
-            {/* <Rating starCount={2} /> */}
+            <Rating starCount={starCountSt} onClick={setStarCountSt}/>
             <Accordion title='title two' itemsCount={2} collapsed={true} />
             <div>-----------------------------------------------------</div>
             <OnOffComponent turnedOn={true}/>
