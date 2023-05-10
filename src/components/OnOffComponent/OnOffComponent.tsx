@@ -4,17 +4,23 @@ import s from './OnOffComponent.module.css'
 
 type PropsType = {
     turnedOn: boolean
+    callback:(v:boolean)=>void
 }
 
-export const OnOffComponent = ({ turnedOn, ...restProps }: PropsType) => {
+export const OnOffComponent = ({ turnedOn,callback, ...restProps }: PropsType) => {
     return (
         <div>
-            {turnedOn && <Field text={'on'} className={s.green} />}
+            <span style={turnedOn?{background:'green'}:{background:'white'}}
+                onClick={()=>callback(!turnedOn)}> on </span>
+            <span style={!turnedOn?{background:'red'}:{background:'white'}}
+                onClick={()=>callback(!turnedOn)}> off </span>
+            <span style={turnedOn?{background:'green'}:{background:'red'}}> bulb </span>
+            {/* {turnedOn && <Field text={'on'} className={s.green} />}
             {turnedOn && <Field text={'off'} />}
             {turnedOn && <Button className={s.green} />}
             {!turnedOn && <Field text={'on'} />}
             {!turnedOn && <Field text={'off'} className={s.red} />}
-            {!turnedOn && <Button className={s.red} />}
+            {!turnedOn && <Button className={s.red} />} */}
         </div>
     )
 }
