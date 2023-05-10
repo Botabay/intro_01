@@ -11,7 +11,7 @@ export function Accordion(props: propsType) {
     return (
         <div>
             <AccordionTitle title={props.title} onClick={()=>setCollapsedSt(!collapsedSt)}/>
-            <AccordionBody itemsCount={props.itemsCount} collapsed={collapsedSt}/>
+            {props.collapsed && <AccordionBody itemsCount={props.itemsCount} />}
         </div>
     )
 }
