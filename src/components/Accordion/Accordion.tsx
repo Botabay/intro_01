@@ -4,14 +4,15 @@ import { useState } from "react";
 type propsType={
     title:string,
     itemsCount:number,
-    collapsed: boolean
+    collapsed:boolean
+    onChange: ()=>void
 }
 export function Accordion(props: propsType) {
     const [collapsedSt,setCollapsedSt]=useState(true);
     return (
         <div>
-            <AccordionTitle title={props.title} onClick={()=>setCollapsedSt(!collapsedSt)}/>
-            {props.collapsed && <AccordionBody itemsCount={props.itemsCount} />}
+            <AccordionTitle title={props.title} onClick={()=>props.onChange()}/>
+            {!props.collapsed && <AccordionBody itemsCount={props.itemsCount} />}
         </div>
     )
 }

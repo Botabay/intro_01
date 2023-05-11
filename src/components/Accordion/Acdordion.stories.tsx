@@ -16,11 +16,11 @@ export default {
 // export const OffMode1 = () => <OnOffComponent turnedOn={false} callback={f}/>
 
 export const CollapsedMode = () =>
-    <Accordion title={'collapsed mode'} itemsCount={2} collapsed={true} />
+    <Accordion title={'collapsed mode'} itemsCount={2} collapsed={true} onChange={()=>{}}/>
 export const UncollapsedMode = () =>
-    <Accordion title={'uncollapsed mode'} itemsCount={2} collapsed={false} />
+    <Accordion title={'uncollapsed mode'} itemsCount={2} collapsed={false} onChange={()=>{}}/>
 
 export const ToChangeMode = () => {
     const [r, setR] = useState<boolean>(true);
-    return <Accordion title={'change mode'} itemsCount={2} collapsed={true} />
+    return <Accordion title={'change mode'} itemsCount={2} collapsed={r} onChange={()=>setR(!r)}/>
 }

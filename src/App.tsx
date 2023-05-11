@@ -17,9 +17,9 @@ export const App = () => {
             <AppTitle text='the text if for AppTitle' />
 
             <Rating starCount={starCountSt} onClick={setStarCountSt}/>
-            <Accordion title='title one' itemsCount={5} collapsed={false} />
+            <Accordion title='title one' itemsCount={5} collapsed={false} onChange={setOnSt}/>
             <Rating starCount={starCountSt} onClick={setStarCountSt}/>
-            <Accordion title='title two' itemsCount={2} collapsed={true} />
+            <Accordion title='title two' itemsCount={2} collapsed={true} onChange={setOnSt} />
             <div>-----------------------------------------------------</div>
             <OnOffComponent turnedOn={true}/>
             <OnOffComponent turnedOn={false}/> 
