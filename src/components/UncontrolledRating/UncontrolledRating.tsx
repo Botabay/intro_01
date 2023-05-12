@@ -1,10 +1,11 @@
 import { UncontrolledStar } from "./UncontrolledStar";
 import { useState } from "react";
 type propsType = {
-    // starCount:number
+    defaultValue:0|1|2|3|4|5
+    onChange:()=>void
 }
 export function UncontrolledRating(props: propsType) {
-    const [starCountSt, setStarCountSt] = useState<number>(3);    
+    const [starCountSt, setStarCountSt] = useState<0|1|2|3|4|5>(props.defaultValue);    
     return (
         <div>
             <div>

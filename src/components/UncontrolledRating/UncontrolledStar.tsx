@@ -1,8 +1,8 @@
 import { Dispatch,SetStateAction } from "react"
 type propsType={
     filled:boolean
-    callback:Dispatch<SetStateAction<number>>
-    key1:number
+    callback:Dispatch<SetStateAction<0|1|2|3|4|5>>
+    key1:0|1|2|3|4|5
 }
 export function UncontrolledStar(props:propsType) {
     const style={color:'red'}

@@ -31,7 +31,7 @@ export const App = () => {
 
             <UncontrolledAccordion title='title UncontrolledAccordion' itemsCount={3}/> 
             
-            <UncontrolledRating />
+            <UncontrolledRating defaultValue={1} onChange={()=>{}}/>
         </div>
     );
 }
