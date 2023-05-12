@@ -1,7 +1,7 @@
 import { useState } from "react"
 type propsType={
     defaultMode:boolean
-    callback:(e)=>void
+    callback:()=>void
 }
 export const UncontrolledInlineCssOnOffComponent=(props:any)=>{
     const [onSt,setOnSt]=useState<boolean>(props.defaultMode)
@@ -30,8 +30,8 @@ export const UncontrolledInlineCssOnOffComponent=(props:any)=>{
     }
     return (
         <div>
-            <span style={onStyle}  onClick={()=>{setOnSt(!onSt);props.callback(e)}}>on</span>
-            <span style={offStyle}  onClick={()=>{setOnSt(!onSt);props.callback(e)}}>off</span>
+            <span style={onStyle}  onClick={()=>{setOnSt(!onSt);props.callback()}}>on</span>
+            <span style={offStyle}  onClick={()=>{setOnSt(!onSt);props.callback()}}>off</span>
             <span style={switcherStyle}></span>
         </div>
     )
