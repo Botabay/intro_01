@@ -17,12 +17,12 @@ export const App = () => {
             <AppTitle text='the text if for AppTitle' />
 
             <Rating starCount={starCountSt} onClick={setStarCountSt}/>
-            <Accordion title='title one' itemsCount={5} collapsed={false} onChange={setOnSt}/>
+            <Accordion title='title one' itemsCount={5} collapsed={false} setOnSt={setOnSt}/>
             <Rating starCount={starCountSt} onClick={setStarCountSt}/>
-            <Accordion title='title two' itemsCount={2} collapsed={true} onChange={setOnSt} />
+            <Accordion title='title two' itemsCount={2} collapsed={true} setOnSt={setOnSt} />
             <div>-----------------------------------------------------</div>
-            <OnOffComponent turnedOn={true}/>
-            <OnOffComponent turnedOn={false}/> 
+            <OnOffComponent turnedOn={true} callback={x=>x}/>
+            <OnOffComponent turnedOn={false} callback={x=>x}/> 
             <div>-----------------------------------------------------</div>
 
             <UncontrolledInlineCssOnOffComponent call={setOnSt}/> {onSt.toString()}

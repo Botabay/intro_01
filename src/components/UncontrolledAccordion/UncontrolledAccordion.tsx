@@ -4,8 +4,7 @@ import { UncontrolledAccordionBody } from "./UncontrolledAccordionBody";
 
 type propsType={
     title:string,
-    itemsCount:number,
-    // collapsed: boolean
+    itemsCount:number
 }
 export function UncontrolledAccordion(props: propsType) {
     const [collapsedSt,setCollapsedSt]=useState(true);
