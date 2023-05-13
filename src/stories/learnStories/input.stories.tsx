@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react'
-import {action} from '@storybook/addon-actions'
+import { action } from '@storybook/addon-actions'
 export default {
     title: 'learn input'
 }
@@ -33,10 +33,15 @@ export const GetValueOfUncontrolledInputByButtonPress = () => {
 
 
 export const ControlledInput = () => {
-    const [parentValue,setParentValue]=useState('')
-    return <input value={parentValue} onChange={action('dfdd')}/>
+    const [parentValue, setParentValue] = useState('')
+    // return <input value={parentValue} onChange={action('dfdd')}/>
+    return <input value={parentValue} onChange={(e) => setParentValue(e.currentTarget.value)} />
 }
 
-export const ControlledCheckbox = () => <input />
+export const ControlledCheckbox = () => {
+    const [parentValue, setParentValue] = useState(false)
+    return <input type='checkbox' checked={parentValue} onChange={(e) =>
+        setParentValue(e.currentTarget.checked)} />
+}
 
 export const ControlledSelect = () => <input />
