@@ -44,4 +44,12 @@ export const ControlledCheckbox = () => {
         setParentValue(e.currentTarget.checked)} />
 }
 
-export const ControlledSelect = () => <input />
+export const ControlledSelect = () => {
+    const [parentValue, setParentValue] = useState<string | undefined>("2")
+    return <select value={parentValue} onChange={(e) =>
+        setParentValue(e.currentTarget.value)}>
+        <option value="1">one</option>
+        <option value="2">two</option>
+        <option value="3">three</option>
+    </select>
+}
