@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react'
+import {action} from '@storybook/addon-actions'
 export default {
     title: 'learn input'
 }
@@ -29,3 +30,13 @@ export const GetValueOfUncontrolledInputByButtonPress = () => {
         {value}
     </>
 }
+
+
+export const ControlledInput = () => {
+    const [parentValue,setParentValue]=useState('')
+    return <input value={parentValue} onChange={action('dfdd')}/>
+}
+
+export const ControlledCheckbox = () => <input />
+
+export const ControlledSelect = () => <input />
