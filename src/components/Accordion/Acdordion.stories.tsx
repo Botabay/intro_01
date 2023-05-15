@@ -15,12 +15,16 @@ export default {
 // export const OnMode1 = () => <OnOffComponent turnedOn={true} callback={f}/>
 // export const OffMode1 = () => <OnOffComponent turnedOn={false} callback={f}/>
 
+const onClickAction = action('the item was clicked')
+
 export const CollapsedMode = () =>
-    <Accordion title={'collapsed mode'} items={['aa','bb','cc']} collapsed={true} setOnSt={()=>{}}/>
+    <Accordion title={'collapsed mode'} items={[]} collapsed={true} setOnSt={() => { }} onClick={onClickAction} />
 export const UncollapsedMode = () =>
-    <Accordion title={'uncollapsed mode'} items={['aa','bb','cc']} collapsed={false} setOnSt={()=>{}}/>
+    <Accordion title={'uncollapsed mode'} items={[{ title: 'aa', value: 1 }, { title: 'bb', value: 2 }, { title: 'cc', value: 3 }]}
+        collapsed={false} setOnSt={() => { }} onClick={onClickAction} />
 
 export const ToChangeMode = () => {
     const [r, setR] = useState<boolean>(true);
-    return <Accordion title={'change mode'} items={['aa','bb','cc']} collapsed={r} setOnSt={()=>setR(!r)}/>
+    return <Accordion title={'change mode'} items={[{ title: 'aa', value: 1 }, { title: 'bb', value: 2 }, { title: 'cc', value: 3 }]}
+        collapsed={r} setOnSt={() => setR(!r)} onClick={onClickAction}/>
 }

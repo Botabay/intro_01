@@ -1,12 +1,16 @@
+import { itemType } from "./Accordion"
 type propsType = {
     // itemsCount: number;
-    items:string[]
+    items: itemType[]
+    onClick:(value:any)=>void
 }
 
 export function AccordionBody(props: propsType) {
     return (
         <ul>
-            {props.items.map((el, index) => <li key={index}>{el}</li>)}
+            {props.items.map((el, index) => {
+                return (<li key={index} onClick={()=>{props.onClick(el.value)}}>{el.title}</li>)
+            })}
         </ul>
     )
 }
