@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react'
 import { action } from '@storybook/addon-actions'
 export default {
-    title: 'learn input'
+    title: 'learn/learn input'
 }
 
 /**
