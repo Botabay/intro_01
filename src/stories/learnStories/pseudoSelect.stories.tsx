@@ -30,7 +30,7 @@ const Select = ({ value, onChange, items }: SelectPropsType) => {
     )
 }
 
-const actionCallback=action('this message from the storybook')
+const actionCallback = action('this message from the storybook')
 
 const items = [
     { title: 'floor', value: '1' },
@@ -38,5 +38,7 @@ const items = [
 ]
 
 export function SelectTest() {
-    return <Select value={'select title'} onChange={actionCallback} items={items} />
+    const [v, setV] = useState('select title');
+    // return <Select value={v} onChange={actionCallback} items={items} />
+    return <Select value={v} onChange={setV} items={items} />
 }
