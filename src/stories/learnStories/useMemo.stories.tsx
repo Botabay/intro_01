@@ -48,7 +48,7 @@ export const UseMemoLikeHelperForReactmemo = () => {//does not work
     }
 
     const res = useMemo(() => f(1000000000), [])
-    const MemoArr= memo(Arr,(p,n)=>p.a===n.a)
+    const MemoArr = memo(Arr, (p, n) => p.a === n.a)
 
     console.log('render');
 
@@ -71,38 +71,38 @@ const UserSecret = ({ users }: { users: string[] }) => {
     return <div>{users.map(el => <p>{el}</p>)}</div>
 }
 
-const Users=memo(UserSecret);
+const Users = memo(UserSecret);
 
-export const UseMemoLikeHelperForReactmemoByDimych1=()=>{
-    const [s,setS]=useState(0);
-    const [users,setUsers]=useState(['a','b','c']);
+export const UseMemoLikeHelperForReactmemoByDimych1 = () => {
+    const [s, setS] = useState(0);
+    const [users, setUsers] = useState(['a', 'b', 'c']);
     console.log('UseMemoLikeHelperForReactmemo is rendered')
     return <>
-    <button onClick={()=>setS(s+1)}>+</button>
-    {s}
-    <Users users={users}/>
+        <button onClick={() => setS(s + 1)}>+</button>
+        {s}
+        <Users users={users} />
     </>
 }
 
-export const UseMemoLikeHelperForReactmemoByDimych2=()=>{
-    const [s,setS]=useState(0);
-    const [users,setUsers]=useState(['a','b','c']);
+export const UseMemoLikeHelperForReactmemoByDimych2 = () => {
+    const [s, setS] = useState(0);
+    const [users, setUsers] = useState(['a', 'b', 'c']);
     console.log('UseMemoLikeHelperForReactmemo is rendered')
     return <>
-    <button onClick={()=>setS(s+1)}>+</button>
-    {s}
-    <Users users={users.filter(el=>true)}/>
+        <button onClick={() => setS(s + 1)}>+</button>
+        {s}
+        <Users users={users.filter(el => true)} />
     </>
 }
 
-export const UseMemoLikeHelperForReactmemoByDimych3=()=>{
-    const [s,setS]=useState(0);
-    const [users,setUsers]=useState(['a','b','c']);
+export const UseMemoLikeHelperForReactmemoByDimych3 = () => {
+    const [s, setS] = useState(0);
+    const [users, setUsers] = useState(['a', 'b', 'c']);
     console.log('UseMemoLikeHelperForReactmemo is rendered')
-    const memoUsers=useMemo(()=>users.filter(el=>true),[users])
+    const memoUsers = useMemo(() => users.filter(el => true), [users])
     return <>
-    <button onClick={()=>setS(s+1)}>+</button>
-    {s}
-    <Users users={memoUsers}/>
+        <button onClick={() => setS(s + 1)}>+</button>
+        {s}
+        <Users users={memoUsers} />
     </>
 }
