@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { action } from '@storybook/addon-actions'
+import s from './useEffect.stories.module.css'
 export default {
     title: 'learn/learn useEffect'
 }
@@ -7,7 +8,7 @@ export default {
 /**
  * 
  * useEffect like sipmle
- * useEffect at clock
+ * useEffect at clock(usual and analog variants)
  */
 
 const functionWithHardCalculations = (): number => {
@@ -36,7 +37,7 @@ export const Clock = () => {
             setValue(new Date());
             // clearInterval(id); here is it does not work
         }, 1000)
-        return ()=>clearInterval(id);//good
+        return () => clearInterval(id);//good
     }, [])
     return <>
         <span>{value.getHours()}</span>
@@ -46,3 +47,68 @@ export const Clock = () => {
         <span>{value.getSeconds()}</span>
     </>
 }
+
+export const AnalogClock = () => {
+    const [value, setValue] = useState(new Date())
+    // const [t,setT]=useState(0)
+    useEffect(() => {
+        const id = setInterval(() => {
+            setValue(new Date());
+        }, 1000)
+        return () => clearInterval(id);
+    }, [])
+    return <>
+        <div className={s.clock} >
+            <div
+                className={s.sec}
+                style={{ transform: `rotate(${value.getSeconds() * 6}deg)` }}
+            />
+            <div
+                className={s.min}
+                style={{ transform: `rotate(${value.getMinutes() * 6}deg)` }}
+            />
+            <div
+                className={s.hour}
+                style={{ transform: `rotate(${value.getHours() * 6}deg)` }}
+            />
+        </div>
+    </>
+}
+
+/**
+ * 
+ * <style>
+      .a {
+        width: 50px;
+        height: 50px;
+        background-color: red;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .b {
+        width: 2px;
+        height: 2px;
+        border-radius: 50%;
+        position: relative;
+      }
+      .b::before {
+        content: '';
+        width: 2px;
+        height: 20px;
+        background-color: white;
+        position: absolute;
+        bottom: 0;
+      }
+      .b {
+        transform: rotate(-200deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="a">
+      <div class="b"></div>
+    </div>
+  </body>
+ * 
+ */
