@@ -50,11 +50,12 @@ export const Clock = () => {
 
 export const AnalogClock = () => {
     const [value, setValue] = useState(new Date())
-    // const [t,setT]=useState(0)
     useEffect(() => {
         const id = setInterval(() => {
             setValue(new Date());
         }, 1000)
+        //week 11 and 12 :cleanup at useEffect when component is dead or run useEffect
+        // it's decided by a returning of the useEffect callback.
         return () => clearInterval(id);
     }, [])
     return <>
